@@ -1,0 +1,171 @@
+﻿@model IEnumerable<FileUploadSample2.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    <img src="@item.GetInLineImgSource()" height="50" width="60" />
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+<!doctype html>
+
+<html class="no-js" lang="en-US">
+
+
+<!-- Mirrored from demos.jeweltheme.com/courseware/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 12:29:40 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CourseWare - HTML5 Template By Jewel Theme</title>
+    <meta name="description" content="CourseWare - HTML5 Template By Jewel Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.png" sizes="32x32">
+    <link rel="icon" href="images/favicon-300x300.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-300x300.png">
+
+    <!-- Import Template Icons CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link href="~/courseware/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+    <link href="~/courseware/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/selectric.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/simple-line-icons.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/style.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/timeTo.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/woocommerce.css" rel="stylesheet" />
+
+    <!-- Import Bootstrap CSS File -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Import External CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!-- Import Template's CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+</head>
+<body>
+    <section class="blog-posts">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="background-color:ghostwhite">
+                        @foreach (var it in Model)
+                        {
+                        <article class="post type-post format-slider">
+                            @*<div class="entry-thumbnail radius">
+                                <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="@it.GetInLineImgSource()" height="200" width="800" />
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>*@
+                            <div class="entry-content media">   
+                                <div class="content-details media-body">
+                                    <h3 class="entry-title">
+                                        <i class="icon-pencil"></i><a>@it.Title </a>
+                                    </h3>
+                                    <div class="entry-meta">
+                                        <span class="author"><i class="icon-user"></i> <a>@it.Author</a></span>
+                                        <span class="tag"><i class="icon-tag"></i> <a>News</a></span>
+                                        <span class="comments"><i class="icon-clock"></i> <a>@Html.DisplayFor(modelItem => it.DateTime)</a></span><br />
+                                        <a asp-action="Edit" asp-route-id="@it.ProductId">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@it.ProductId">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@it.ProductId">Delete</a>
+                                    </div>
+                                    <div class="entry-thumbnail radius">
+                                        <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="@it.GetInLineImgSource()" height="150" width="150" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @it.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        } 
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-padding -->
+    </section><!-- /.blog-posts -->
+
+
+
+
+    <script src="~/courseware/assets/js/jquery.selectric.js"></script>
+    <script src="~/courseware/assets/js/jquery-ui.min.js"></script>
+    <script src="~/courseware/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/courseware/assets/js/main.js"></script>
+    <script src="~/courseware/assets/js/plugins.js"></script>
+</body>
+
+<!-- Mirrored from demos.jeweltheme.com/courseware/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 12:29:47 GMT -->
+</html>
