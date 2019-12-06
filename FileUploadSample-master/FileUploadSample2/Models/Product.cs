@@ -14,8 +14,7 @@ namespace FileUploadSample2.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime DateTime { get; set; } 
+        public DateTime DateTime { get; set; } = DateTime.Now;
         public byte[] ProductPicture { get; set; }
 
         [NotMapped]
