@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-<p>
-    <a asp-action="Create">Create New</a>
+<p style="text-align:center">
+    <a class="btn btn-lg" asp-action="Create">Create New Post</a>
 </p>
 @*<table class="table">
     <thead>
@@ -101,18 +101,22 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-
+    <style>
+        .col-md-12{
+            border-radius:9px;
+        }
+    </style>
 
 </head>
-<body>
+<body style="background-color:black">
     <section class="blog-posts">
         <div class="section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4" style="background-color:ghostwhite">
+                    <div class="col-md-12" style="background-color:ghostwhite" >
                         @foreach (var it in Model)
                         {
-                        <article class="post type-post format-slider">
+                        <article style="text-align:center" class="post type-post format-slider">
                             @*<div class="entry-thumbnail radius">
                                 <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
                                     <div class="carousel-inner">
@@ -123,9 +127,9 @@
                                 </div>
                             </div>*@
                             <div class="entry-content media">   
-                                <div class="content-details media-body">
+                                <div class="content-details media-body"><br />
                                     <h3 class="entry-title">
-                                        <i class="icon-pencil"></i><a>@it.Title </a>
+                                       <a class="icon-pencil" style="text-underline-position:auto">@it.Title </a>
                                     </h3>
                                     <div class="entry-meta">
                                         <span class="author"><i class="icon-user"></i> <a>@it.Author</a></span>
@@ -139,7 +143,7 @@
                                         <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
-                                                    <img src="@it.GetInLineImgSource()" height="150" width="150" />
+                                                    <img src="@it.GetInLineImgSource()" height="150" width="450" />
                                                 </div>
                                             </div>
                                         </div>
