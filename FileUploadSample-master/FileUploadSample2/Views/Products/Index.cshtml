@@ -113,55 +113,55 @@
         <div class="section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12" style="background-color:ghostwhite" >
+                    <div class="col-md-12" style="background-color:ghostwhite">
                         @foreach (var it in Model.Reverse())
                         {
-                        <article style="text-align:center" class="post type-post format-slider">
-                            @*<div class="entry-thumbnail radius">
-                                <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="@it.GetInLineImgSource()" height="200" width="800" />
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>*@
-                            <div class="entry-content media">   
-                                <div class="content-details media-body">
-                                    <br />
-                                    <h3 class="entry-title">
-                                        <a class="i" style="text-underline-position:auto">@it.Title </a>
-                                    </h3>
-                                    <div class="entry-meta">
-                                        <span class="author"><i class="icon-user"></i> <a>@it.Author</a></span>
-                                        <span class="tag"><i class="icon-tag"></i> <a>News</a></span>
-                                        <span class="comments"><i class="icon-clock"></i> <a>@Html.DisplayFor(modelItem => it.DateTime)</a></span><br />
-                                        <a asp-action="Edit" asp-route-id="@it.ProductId">Edit</a>|
-                                        <a asp-action="Details" asp-route-id="@it.ProductId">Details</a>|
-                                        <a asp-action="Delete" asp-route-id="@it.ProductId">Delete</a>
-                                    </div>
-                                    <div class="entry-thumbnail radius">
+                            <article style="text-align:center" class="post type-post format-slider">
+                                @*<div class="entry-thumbnail radius">
                                         <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
-                                                    <img src="@it.GetInLineImgSource()" height="150" width="450" />
+                                                    <img src="@it.GetInLineImgSource()" height="200" width="800" />
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@
+                                <div class="entry-content media">
+                                    <div class="content-details media-body">
+                                        <br />
+                                        <h3 class="entry-title">
+                                            <a class="i" style="text-underline-position:auto">@it.Title </a>
+                                        </h3>
+                                        <div class="entry-meta">
+                                            <span class="author"><i class="icon-user"></i> <a style="font-weight:bolder">@it.Author</a></span>
+                                            <span class="tag"><i class="icon-tag"></i> <a style="font-weight:bolder">News</a></span>
+                                            <span class="comments"><i class="icon-clock"></i> <a style="font-weight:bolder">@Html.DisplayFor(modelItem => it.DateTime)</a></span><br />
+                                            <a asp-action="Edit" asp-route-id="@it.ProductId">Edit</a>|
+                                            <a asp-action="Details" asp-route-id="@it.ProductId">Details</a>|
+                                            <a asp-action="Delete" asp-route-id="@it.ProductId">Delete</a>
+                                        </div>
+                                        <div class="entry-thumbnail radius">
+                                            <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="@it.GetInLineImgSource()" height="150" width="450" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="container">
                                             <p class="top-content">
                                                 <a asp-action="Details" asp-route-id="@it.ProductId" class="btn btn-lg">Read more</a>
                                                 @*<strong>
-                                                    @it.Description
-                                                </strong>*@
+                                                        @it.Description
+                                                    </strong>*@
                                             </p>
                                         </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                        } 
+                            </article>
+                        }
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->

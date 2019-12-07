@@ -90,9 +90,9 @@
                                         <a class="i" style="text-underline-position:auto">@Html.DisplayFor(model => model.Title) </a>
                                     </h3>
                                     <div class="entry-meta">
-                                        <span class="author"><i class="icon-user"></i> <a>@Html.DisplayFor(model => model.Author)</a></span>
-                                        <span class="tag"><i class="icon-tag"></i> <a>News</a></span>
-                                        <span class="comments"><i class="icon-clock"></i> <a> @Html.DisplayFor(model => model.DateTime)</a></span><br />
+                                        <span class="author"><i class="icon-user"></i> <a style="font-weight:bolder">@Html.DisplayFor(model => model.Author)</a></span>
+                                        <span class="tag"><i class="icon-tag"></i> <a style="font-weight:bolder">News</a></span>
+                                        <span class="comments"><i class="icon-clock"></i> <a style="font-weight:bolder"> @Html.DisplayFor(model => model.DateTime)</a></span><br />
                                     </div>
                                     <div class="entry-thumbnail radius">
                                         <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
@@ -106,9 +106,9 @@
 
                                     <div class="container">
                                         <p class="top-content">
-                                            <p style="font-weight:bolder" class="col-sm-10">
+                                            <a style="font-weight:bolder" class="col-sm-10">
                                                 @Html.DisplayFor(model => model.Description)
-                                            </p>
+                                            </a>
                                         </p>
                                     </div>
 

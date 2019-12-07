@@ -3,13 +3,105 @@
 @{
     ViewData["Title"] = "Create";
 }
+    <head>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link href="~/courseware/assets/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+        <link href="~/courseware/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/magnific-popup.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/owl.carousel.min.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/responsive.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/selectric.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/simple-line-icons.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/style.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/timeTo.css" rel="stylesheet" />
+        <link href="~/courseware/assets/css/woocommerce.css" rel="stylesheet" />
 
-<h1>Create</h1>
+        <!-- Import Bootstrap CSS File -->
 
-<h4>Product</h4>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <!-- Import External CSS Files -->
+
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+        <!-- Import Template's CSS Files -->
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </head>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<body style="background-color:black">
+    <section class="blog-posts">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="background-color:ghostwhite">
+                            <article style="text-align:center" class="post type-post format-slider">
+                                <div class="entry-content media">
+                                    <div class="content-details media-body">
+                                        <br />
+                                        <div class="container">
+                                                <div class="col-md-12">
+                                                    <form style="text-align:center" asp-action="Create" enctype="multipart/form-data">
+                                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                        <div class="form-group">
+                                                            <label asp-for="Title" class="control-label"></label>
+                                                            <input asp-for="Title" class="form-control" />
+                                                            <span asp-validation-for="Title" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="Description" class="control-label"></label>
+                                                            <textarea style="height:80px" asp-for="Description" class="form-control"></textarea>
+                                                            <span asp-validation-for="Description" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="Author" class="control-label"></label>
+                                                            <input asp-for="Author" class="form-control" />
+                                                            <span asp-validation-for="Author" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label asp-for="ProductPicture" class="control-label"></label>
+                                                            <input asp-for="File" type="file" accept="image/*">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="submit" value="Create" class="btn btn-lg" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-padding -->
+    </section><!-- /.blog-posts -->
+
+
+
+
+    <script src="~/courseware/assets/js/jquery.selectric.js"></script>
+    <script src="~/courseware/assets/js/jquery-ui.min.js"></script>
+    <script src="~/courseware/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/courseware/assets/js/main.js"></script>
+    <script src="~/courseware/assets/js/plugins.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+    <div class="col-md-7">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -36,11 +128,12 @@
             </div>
         </form>
     </div>
-</div>
+</div>*@
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<br /><br />
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
