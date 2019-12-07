@@ -4,45 +4,191 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<!doctype html>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductPicture)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ProductPicture)
-        </dd>
-    </dl>
-</div>
-<div>
+<html class="no-js" lang="en-US">
+
+
+<!-- Mirrored from demos.jeweltheme.com/courseware/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 12:29:40 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CourseWare - HTML5 Template By Jewel Theme</title>
+    <meta name="description" content="CourseWare - HTML5 Template By Jewel Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="images/favicon.png" sizes="32x32">
+    <link rel="icon" href="images/favicon-300x300.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-300x300.png">
+
+    <!-- Import Template Icons CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link href="~/courseware/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+    <link href="~/courseware/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/selectric.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/simple-line-icons.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/style.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/timeTo.css" rel="stylesheet" />
+    <link href="~/courseware/assets/css/woocommerce.css" rel="stylesheet" />
+
+    <!-- Import Bootstrap CSS File -->
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Import External CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!-- Import Template's CSS Files -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .col-md-12 {
+            border-radius: 9px;
+        }
+    </style>
+
+</head>
+<body style="background-color:black">
+    <section class="blog-posts">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="background-color:ghostwhite">
+                        <article style="text-align:center" class="post type-post format-slider">
+                            @*<div class="entry-thumbnail radius">
+            <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="@it.GetInLineImgSource()" height="200" width="800" />
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                            <div class="entry-thumbnail radius">
+                                <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="@Model.GetInLineImgSource()" height="200" width="200" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<img src="@Model.GetInLineImgSource()" width="200" height="200" />*@
+                            <div class="entry-content media">
+                                <div class="content-details media-body">
+                                    <br />
+                                    <h3 class="entry-title">
+                                        <a class="i" style="text-underline-position:auto">@Html.DisplayFor(model => model.Title) </a>
+                                    </h3>
+                                    <div class="entry-meta">
+                                        <span class="author"><i class="icon-user"></i> <a>@Html.DisplayFor(model => model.Author)</a></span>
+                                        <span class="tag"><i class="icon-tag"></i> <a>News</a></span>
+                                        <span class="comments"><i class="icon-clock"></i> <a> @Html.DisplayFor(model => model.DateTime)</a></span><br />
+                                    </div>
+                                    <div class="entry-thumbnail radius">
+                                        <div id="post-slider-02" class="post-slider-02 carousel slide carousel-fade" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    @*@Html.DisplayFor(model => model.ProductPicture)*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <p class="top-content">
+                                            <a class="col-sm-10">
+                                                @Html.DisplayFor(model => model.Description)
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    @*<section class="about-us text-center">
+                    <div class="section-padding">
+                        <div class="container">
+                            <p class="top-content">
+                               @it.Description
+                            </p>
+                        </div>
+                    </div>
+                </section>*@
+                                    @*<p class="top-content" style="font-weight:bolder">
+                    @it.Description
+                </p>*@
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-padding -->
+    </section><!-- /.blog-posts -->
+
+
+
+
+    <script src="~/courseware/assets/js/jquery.selectric.js"></script>
+    <script src="~/courseware/assets/js/jquery-ui.min.js"></script>
+    <script src="~/courseware/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/courseware/assets/js/main.js"></script>
+    <script src="~/courseware/assets/js/plugins.js"></script>
+</body>
+
+<!-- Mirrored from demos.jeweltheme.com/courseware/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 12:29:47 GMT -->
+</html>
+
+
+
+
+
+@*<h1>Details</h1>
+
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Author)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Author)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateTime)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ProductPicture)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Model.GetInLineImgSource()" width="200" height="200" />
+            </dd>
+        </dl>
+    </div>*@
+@*<div>
     <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

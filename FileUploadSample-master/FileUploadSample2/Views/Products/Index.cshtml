@@ -127,9 +127,10 @@
                                 </div>
                             </div>*@
                             <div class="entry-content media">   
-                                <div class="content-details media-body"><br />
+                                <div class="content-details media-body">
+                                    <br />
                                     <h3 class="entry-title">
-                                       <a class="icon-pencil" style="text-underline-position:auto">@it.Title </a>
+                                        <a class="i" style="text-underline-position:auto">@it.Title </a>
                                     </h3>
                                     <div class="entry-meta">
                                         <span class="author"><i class="icon-user"></i> <a>@it.Author</a></span>
@@ -148,9 +149,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p>
-                                        @it.Description
-                                    </p>
+
+                                        <div class="container">
+                                            <p class="top-content">
+                                                <a asp-action="Details" asp-route-id="@it.ProductId" class="btn btn-lg">Read more</a>
+                                                @*<strong>
+                                                    @it.Description
+                                                </strong>*@
+                                            </p>
+                                        </div>
                                 </div>
                             </div>
                         </article>
